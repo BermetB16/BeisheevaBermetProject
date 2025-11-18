@@ -6,11 +6,11 @@ public class HomeWork8 {
    static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
         //1
-       // changeAtoB();
+      //  changeAtoB();
         //2
        // capitalLetters();
         //3
-       // reverseA_B();
+        // reverseA_B();
         //4
        // firstWord();
         // 5
@@ -27,33 +27,68 @@ public class HomeWork8 {
         System.out.println("'a' will change to 'b'");
         System.out.println("Enter your text:");
         String text = sc.nextLine();
-        if (text.contains("a")) {
-            String result = text.replace('a', 'b');
-            System.out.println("Результат: " + result);
+        int count = 0;
+        char[] chars = text.toCharArray();
+
+        for (int i = 0; i < chars.length; i++) {
+            if (chars[i] == 'a') {
+                chars[i] = 'b';
+                count++;
+            }
         }
+        String result = new String(chars);
+        System.out.println(result);
+        System.out.println(count);
     }
 
     static void capitalLetters(){
         System.out.println("'a' will change to 'b' and 'A' to 'B'");
         System.out.println("Enter your text:");
         String text = sc.nextLine();
-        String result = text
-                .replace('a', 'b')
-                .replace('A', 'B');
-        System.out.println("Результат: " + result);
+        int count = 0;
+        char[] chars = text.toCharArray();
+
+        for (int i = 0; i < chars.length; i++) {
+            if (chars[i] == 'a') {
+                chars[i] = 'b';
+                count++;
+            } else if (chars[i] == 'A') {
+                chars[i] = 'B';
+                count++;
+            }
+        }
+
+        String result = new String(chars);
+        System.out.println(result);
+        System.out.println(count);
     }
 
     static void reverseA_B(){
         System.out.println("'a' will change to 'b', 'A' to 'B' and in reverse");
         System.out.println("Enter your text:");
         String text = sc.nextLine();
-        String result = text
-                .replace('a', 'b')
-                .replace('b', 'a')
-                .replace('a', 'b')
-                .replace('A', 'B')
-                .replace('B', 'A');
-        System.out.println("Результат: " + result);
+        int count = 0;
+        char[] chars = text.toCharArray();
+
+        for (int i = 0; i < chars.length; i++) {
+            if (chars[i] == 'a') {
+                chars[i] = 'b';
+                count++;
+            }  else if (chars[i] == 'A') {
+        chars[i] = 'B';
+        count++;
+    } else if (chars[i] == 'b') {
+        chars[i] = 'a';
+        count++;
+    } else if (chars[i] == 'B') {
+        chars[i] = 'A';
+        count++;
+    }
+}
+
+String result = new String(chars);
+        System.out.println(result);
+        System.out.println(count);
     }
 
     static void firstWord(){
@@ -137,5 +172,4 @@ public class HomeWork8 {
             System.out.println("NO");
         }
     }
-
 }
